@@ -346,16 +346,18 @@ textarea {
     font-family: var(--font-stack);
 }
 
+.primary-btn:hover {
+    color: var(--text-primary);
+    background-color: #f5f5f5;
+}
+
+.icon-btn:hover {
+    color: var(--text-primary);
+    background-color: #f5f5f5;
+}
+
 .primary-btn {
     width: 100%;
-}
-
-.icon-btn {
-    width: 40px;
-}
-
-.primary-btn:hover {
-    opacity: 0.9;
 }
 
 .icon-btn {
@@ -363,12 +365,8 @@ textarea {
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
     padding: 10px;
+    width: 40px;
     flex: 0 0 auto;
-}
-
-.icon-btn:hover {
-    color: var(--text-primary);
-    background-color: #f5f5f5;
 }
 
 ::-webkit-scrollbar-thumb {

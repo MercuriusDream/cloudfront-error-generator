@@ -21,6 +21,7 @@ const elements = {
     designDataInput: document.getElementById('designDataInput'),
     downloadHtmlBtn: document.getElementById('downloadHtmlBtn'),
     openNewTabBtn: document.getElementById('openNewTabBtn'),
+    githubRepoBtn: document.getElementById('githubRepoBtn'),
     resetBtn: document.getElementById('resetBtn'),
 };
 
@@ -62,7 +63,6 @@ function populateInputs(state) {
     elements.bodyText.value = state.bodyText;
     elements.footerText.value = state.footerText;
     elements.requestId.value = state.requestId;
-    elements.resetBtn.value = state.resetBtn;
 }
 
 function getCurrentState() {
@@ -73,7 +73,6 @@ function getCurrentState() {
         bodyText: elements.bodyText.value || defaultState.bodyText,
         footerText: elements.footerText.value || defaultState.footerText,
         requestId: elements.requestId.value || defaultState.requestId,
-        resetBtn: elements.resetBtn.value || defaultState.resetBtn
     };
 }
 
@@ -134,7 +133,8 @@ function addListeners() {
         elements.bodyText,
         elements.footerText,
         elements.requestId,
-        elements.resetBtn
+        elements.resetBtn,
+        elements.githubRepoBtn
     ];
 
     inputs.forEach(input => {
@@ -149,6 +149,10 @@ function addListeners() {
             win.document.write(html);
             win.document.close();
         }
+    });
+
+    elements.githubRepoBtn.addEventListener('click', () => {
+        window.open("https://github.com/MercuriusDream/cloudfront-error-generator", "_blank");
     });
 
     elements.resetBtn.addEventListener('click', () => {

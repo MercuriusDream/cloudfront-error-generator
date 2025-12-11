@@ -5,6 +5,8 @@
 You can make your own CloudFront error page and mimic it.
 Yes, You've heard that right!
 
+[Try it](https://mercuriusdream.com/cloudfront-error-generator)
+
 ## Introduction
 
 This tool provides a complete environment for designing CloudFront error pages without requiring server-side processing or build tools. The application runs entirely in the browser, using Base64-encoded URL parameters for state management, allowing designs to be shared as simple links. All configuration happens through a clean, tab-based interface with real-time preview and multiple export options.
@@ -56,36 +58,7 @@ This allows designs to be:
 - Embedded in documentation
 - Versioned in URL shorteners
 
-## Architecture
-
-### Components
-
-The application is structured around three core files:
-
-| File | Purpose | Lines |
-| --- | --- | --- |
-| `index.html` | Application structure and layout | 162 |
-| `script.js` | State management and logic | 216 |
-| `style.css` | Visual styling | Variable |
-
-### State Management
-
-Configuration state flows through the following cycle:
-
-```
-User Input → getCurrentState() → updateUrl() → URL Parameters
-    ↑                                              ↓
-    └────────── loadStateFromUrl() ←──────────────┘
-```
-
-State persistence happens automatically on every input change via the `updateUrl()` function, which:
-1. Serializes current form values to JSON
-2. Encodes JSON as Base64
-3. Updates browser history without page reload
-
-On page load, `loadStateFromUrl()` reverses this process to restore state.
-
-### Output Format
+## Output Format
 
 Generated error pages follow CloudFront's HTML 4.01 Transitional format:
 
@@ -112,6 +85,8 @@ All user input is sanitized through `escapeHtml()` to prevent XSS vulnerabilitie
 ## Development
 
 The codebase requires no build process or package management. All dependencies are either included via CDN (Google Fonts) or implemented directly in JavaScript.
+
+[Visit here for a live demo](https://mercuriusdream.com/cloudfront-error-generator)
 
 ### Project Structure
 

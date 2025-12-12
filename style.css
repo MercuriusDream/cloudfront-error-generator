@@ -375,3 +375,19 @@ textarea {
 ::-webkit-scrollbar-thumb:hover {
     background: #bbb;
 }
+
+@media (orientation: portrait) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .preview-pane {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .editor-pane {
+        width: 100%;
+        flex: 1;
+    }
+}
